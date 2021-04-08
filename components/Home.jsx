@@ -13,7 +13,7 @@ const Home = () => {
             <Navbar />
             <div className='xl:w-9/12 mx-auto h-screen p-10 xl:px-40 flex flex-col justify-evenly text-gray-200'>
                 <div className='flex flex-col items-center lg:flex-row text-5xl lg:justify-evenly'>
-                    <img src='/gamer.svg' className='md:w-3/12 w-4/12 lg:mr-10 mb-20 lg:mb-0 '/>
+                    <img src='/gamer.svg' className='md:w-3/12 w-4/12 lg:mr-10 mb-20 lg:mb-0 hidden md:block'/>
                     <div className='flex flex-col'>
                         <div className='flex mb-4 justify-end'>
                             <a href='https://github.com/aguv'>
