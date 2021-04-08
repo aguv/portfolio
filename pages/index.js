@@ -20,7 +20,6 @@ export default function Index() {
   useEffect(() => {
     if(scroll) {
       setTimeout(() => {
-        console.log('dentro del time')
         setScroll(false)
       }, 4000)
     }
