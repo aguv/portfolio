@@ -14,13 +14,11 @@ export default function Index() {
   const [scroll, setScroll] = useState(false);
 
   useEffect(() => {
-    console.log('first ue')
     window.addEventListener('scroll', () => setScroll(true));
   }, [])
 
   useEffect(() => {
     if(scroll) {
-      console.log('second ue');
       setTimeout(() => {
         console.log('dentro del time')
         setScroll(false)
