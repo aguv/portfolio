@@ -30,11 +30,11 @@ const Home = () => {
                             className='text-red-200'
                             typingDelay={1000}
                             cursorClassName='invisible'
-                            className='my-5 text-red-200 text-right lg:text-5xl md:text-4xl sm:text-3xl'
+                            className='my-5 text-red-200 text-right lg:text-5xl md:text-4xl sm:text-3xl xs:text-xl'
                         />
                         <ReactTypingEffect 
                             text={['Argentina']}
-                            className='text-red-200 text-right lg:text-5xl md:text-4xl sm:text-3xl'
+                            className='text-red-200 text-right lg:text-5xl md:text-4xl sm:text-3xl xs:text-2xl'
                             typingDelay={3000}
                             cursorClassName='invisible'
                         />

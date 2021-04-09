@@ -9,7 +9,7 @@ const Navbar = () => {
                     <a className='p-2 hover:border-red-200 hover:text-red-300'>about me</a>
                 </Link>
                 <Link href='/#tech'>
-                    <a className='mx-10 p-2 hover:border-blue-200 hover:text-red-300'>technologies</a>
+                    <a className='xs:mx-5 mx-10 p-2 hover:border-blue-200 hover:text-red-300'>technologies</a>
                 </Link>
                 <Link href='/#contact'>
                     <a className='p-2 hover:text-red-300'>contact</a>
