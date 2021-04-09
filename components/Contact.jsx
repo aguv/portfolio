@@ -59,8 +59,8 @@ const Contact = () => {
 
     return (
         <div className='w-full min-h-screen bg-gray-900 bg-opacity-100 flex 2xl:flex-row flex-col xl:px-60 xl:py-20 px-5 py-10 font-mono'  id='contact'>
-            <div className='2xl:w-5/12 lg:w-8/12 w-10/12 bg-gray-600 border-t-4 border-gray-500 flex flex-col self-center 2xl:self-start h-full p-4 mt-2 rounded-sm'>
-                <p className='ml-3 text-gray-100'>contact me:</p>
+            <div className='2xl:w-5/12 lg:w-8/12 w-10/12 bg-gray-600 border-t-4 border-gray-500 flex flex-col self-center 2xl:self-start h-full p-1 md:p-4 mt-2 rounded-sm'>
+                <p className='ml-3 text-gray-100 pt-2 md:pt-0'>contact me:</p>
                 <hr className='m-2' />
                 <form className='flex flex-col w-10/12 mx-auto text-gray-900 mt-1' onSubmit={handleSubmit}>
                     <input type='text' placeholder='name' name='name' className='p-2 shadow-md rounded-md' value={form.name} onChange={handleChangeForm} />
@@ -83,7 +83,7 @@ const Contact = () => {
                             <p>{item.title}</p>
                             <hr className='w-full m-1 border-gray-400'/>
                             <p className='text-xs text-justify flex-1'>{item.description}</p>
-                            <a href={item.git} className='p-2 bg-gray-800 text-xs w-auto self-end text-center hover:bg-red-200 hover:text-red-900'>Miralo en GitHub</a>
+                            <a href={item.git} className='p-2 bg-gray-800 text-xs w-auto self-end text-center hover:bg-red-200 hover:text-red-900 xs:my-2 my-2 md:my-0'>Miralo en GitHub</a>
                         </div>
                     </div>
                 ))}
