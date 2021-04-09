@@ -36,7 +36,7 @@ export default function Index() {
             (
               <Link href='/#main'>
                 <a>
-                  <FontAwesomeIcon icon={faArrowAltCircleUp} className={`text-gray-100 w-12 hover:text-red-200 fixed bottom-24 left-10 lg:bottom-24 lg:left-24 ${myTransition}`}/>
+                  <FontAwesomeIcon icon={faArrowAltCircleUp} className={`z-50 text-gray-100 w-12 hover:text-red-200 fixed bottom-24 left-10 lg:bottom-24 lg:left-24 ${myTransition}`}/>
                 </a>
               </Link>
             ) : null}      
