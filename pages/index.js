@@ -6,8 +6,8 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Link from 'next/link'
 import utils from '../utils';
+import Link from 'next/link'
 
 export default function Index() {
   const myTransition = utils.transition;
