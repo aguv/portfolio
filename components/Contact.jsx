@@ -2,10 +2,8 @@ import React, { useState } from 'react'
 import  db  from '../firebase';
 import SuccessAlert from './SuccessAlert';
 import utils from '../utils';
-import Link from 'next/link';
 import myProjects from '../infoprojects';
-
-const items = [1, 2, 3, 4];
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
     const myTransition = utils.transition;
@@ -24,7 +22,9 @@ const Contact = () => {
         mode: ''
     })
 
-    const handleAddMessage = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
         const { name, email, message } = form;
         setLoader(true);
 
@@ -37,18 +37,19 @@ const Contact = () => {
             name,
             email,
             message
-        }).then(data => {
-                setLoader(false);
-
-                if (data) {
-                    utils.handleAlert('Submmited', 'Thanks for your time :)', 'bg-green-700 border-green-800', setAlert);
-                }
-
-                setForm({
-                    name: '',
-                    email: '',
-                    message: ''
-                });
+        }).then( _ => {
+                emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICE, process.env.NEXT_PUBLIC_TEMPLATEID, e.target, process.env.NEXT_PUBLIC_USERID)
+                    .then( _ => {
+                        setLoader(false);
+                        utils.handleAlert('Submmited', 'Thanks for your time :)', 'bg-green-700 border-green-800', setAlert);
+                        setForm({
+                            name: '',
+                            email: '',
+                            message: ''
+                        });
+                    })
+                    .catch(e => console.log(e));
+   
             });
     };
 
@@ -61,12 +62,12 @@ const Contact = () => {
             <div className='2xl:w-5/12 lg:w-8/12 w-10/12 bg-gray-600 border-t-4 border-gray-500 flex flex-col self-center 2xl:self-start h-full p-4 mt-2 rounded-sm'>
                 <p className='ml-3 text-gray-100'>contact me:</p>
                 <hr className='m-2' />
-                <div className='flex flex-col w-10/12 mx-auto text-gray-900 mt-1'>
+                <form className='flex flex-col w-10/12 mx-auto text-gray-900 mt-1' onSubmit={handleSubmit}>
                     <input type='text' placeholder='name' name='name' className='p-2 shadow-md rounded-md' value={form.name} onChange={handleChangeForm} />
                     <input type='email' placeholder='email' name='email' className='my-2 p-2 rounded-md' value={form.email} onChange={handleChangeForm} />
                     <textarea placeholder='message' name='message' className='h-60 p-2 shadow-md rounded-md' value={form.message} onChange={handleChangeForm} />
-                </div>
-                <button className='bg-red-200 mt-4 rounded-md w-10/12 mx-auto mb-12 p-2 hover:bg-red-300' onClick={handleAddMessage}>SEND!</button>
+                    <input type='submit' value='SEND!' className='bg-red-200 mt-4 rounded-md w-full mx-auto mb-12 p-2 hover:bg-red-300 cursor-pointer' />
+                </form>
                 {alert.message ? <SuccessAlert title={alert.title} message={alert.message} color={alert.color} /> : null}
                 {loader ? <div className="mx-auto loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div> : null}
             </div>
