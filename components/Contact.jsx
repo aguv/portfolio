@@ -8,8 +8,6 @@ import myProjects from '../infoprojects';
 const items = [1, 2, 3, 4];
 
 const Contact = () => {
-    const img = 'https://d25rq8gxcq0p71.cloudfront.net/dictionary-images/324/cce97f0f-04fa-4e20-b445-d01157886e29.jpg';
-
     const myTransition = utils.transition;
 
     const [form, setForm] = useState({
