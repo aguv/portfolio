@@ -77,10 +77,10 @@ const Contact = () => {
                 <hr className='border-gray-500 w-6/12 my-2'/>
                 {myProjects.map((item, i) => (
                     <div key={i} className={`flex-1 max-h-44 flex xl:w-10/12 2xl:w-10/12 w-full md:w-9/12 lg:w-7/12 bg-gray-600 my-4 border-4 border-gray-700 rounded-b-md ${myTransition}`}>
-                        <div className='2xl:w-6/12 xl:w-5/12 w-6/12'>
+                        <div className='2xl:w-6/12 xl:w-5/12 w-6/12 hidden sm:block'>
                             <img src={item.img} className='min-w-full h-full'/>
                         </div>
-                        <div className='border-l-4 flex flex-col border-gray-500 p-2 w-7/12'>
+                        <div className='border-l-4 flex flex-col border-gray-500 p-2 w-full sm:w-7/12'>
                             <p>{item.title}</p>
                             <hr className='w-full m-1 border-gray-400'/>
                             <p className='text-xs text-justify flex-1'>{item.description}</p>
